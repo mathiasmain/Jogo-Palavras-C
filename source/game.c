@@ -16,3 +16,10 @@
 // #include <assert.h>
 // #define ll long long
 // assert
+
+
+void Game()
+{
+
+
+}

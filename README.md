@@ -27,3 +27,19 @@ e com o modo write+, fará um append de uma palavra.
 - Consultar palavras adicionadas, fará uma leitura com read até o fim do arquivo.
 
 - Para sair, será usado um bool de valor modificado para 1 para indicar a saída.
+
+
+
+#### Função Erased.
+
+Como não é possível no C retirar uma linha de um arquivo sem precisar passar seu conteúdo para outra pasta, primeiramente abriremos a pasta principal chamada de "repo.txt".
+
+Então, abriremos uma pasta de suporte simultâneamente, para que imediatamente possa ser passado as palavras que não batem com a palavra que queremos eliminar. Então finalmente, copiaremos no modo w+.
+
+Assim, sempre teremos uma pasta padrão repo.txt e a de suporte.
+
+1. Pergunta a palavra a ser eliminada.
+2. Armazena.
+3. Roda um loop que, independente desta palavra existir ou não na pasta, roda um copiando tudo oque houver
+no arquivo primário para o secundário.
+4. Copia de volta para a pasta primária com o modo "w+", todas as palavras de volta.

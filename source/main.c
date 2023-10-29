@@ -21,13 +21,13 @@
 // #define ll long long
 // assert
 
-Insert();
+void Insert();
 
-Retrieve();
+void Erased();
 
-Consult();
+void Consult();
 
-Game();
+void Game();
 
 int main(void)
 {
@@ -83,22 +83,12 @@ int main(void)
                 {
 
                     case 1: // Add palavra
-                        printf("Qual palavra deseja adicionar? máx: 30 caracteres");
-                        char buffer3[32];
-
-                        fgets(buffer3, 32, stdin);
-                        Insert(&buffer3[0]);
-
+                        Insert();
                         break;
                     
 
                     case 2: // Retirar palavra
-                        printf("Qual palavra deseja retirar?");
-                        char buffer4[32];
-
-                        fgets(buffer4, 32, stdin);
-                        Retrieve(&buffer4[0]);
-
+                        Erased();
                         break;
                     
                     case 3: // Consultar palavras

@@ -16,6 +16,7 @@
 // #include <assert.h>
 // #define ll long long
 
+
 void Insert()
 {
 
@@ -48,84 +49,48 @@ void Insert()
 
 void Erased()
 {
-    FILE *arquivo;
+    FILE *arquivo, *temp_file;
     arquivo = fopen("repo.txt", "a");
+    temp_file = fopen("temp.txt", "w+");
 
-    if (arquivo == NULL)
+    if (arquivo == NULL || temp_file == NULL)
     {
         printf("Não foi possível abrir o arquivo!\n");
         EXIT_FAILURE;
     }
     else
     {
-        size_t linhas = 0;
-        size_t *linhas2;
-        *linhas2 = 0;
-        size_t linhas3 = 0;
-        bool achou = 0;
+        char BufferEr[32];
+        char BufferTemp[32];
 
-        while(!feof(arquivo)){
-            linhas++;
-        }
+        printf("Qual palavra deseja inserir?");
+        fgets(BufferEr, 32, stdin);
         
-        printf("Qual palavra deseja retirar? máx: 30 caracteres.\n");
-
-        char buffer6[32];
-        char buffer7[32];
-        char Transport[linhas][32];
-
-        fgets(buffer6, 32, stdin);
-        
-        while(fgets(buffer7, 32, arquivo));
+        while(fgets(BufferTemp, 32, arquivo) != NULL)
         {
-            if (buffer7 == buffer6)
+            if (strcmp(BufferEr, BufferTemp) != 0)
             {
-                rewind(arquivo);
-                while(!feof(arquivo))
-                {
-                    if (linhas3 == *linhas2)
-                    {
-                        continue;
-                    }
-                    else{
-                        fgets(Transport, 32, arquivo);
-                    }
-                
-                    linhas3++;
-                }
-
-                fclose(arquivo);
-
-                FILE* arquivo2 = fopen("repo.txt","w+");
-
-                if (arquivo == NULL)
-                {
-                    printf("Não foi possível abrir o arquivo!");
-                    EXIT_FAILURE;
-                }
-                else
-                {
-                for(size_t x = 0; x < linhas; x++)
-                {
-                    fputs("%s\n", Transport[x]);
-                }                
-                fclose(arquivo2);
-                EXIT_SUCCESS;
-                }
-                
+                fputs(BufferTemp,temp_file);
             }
-
-            if(feof(arquivo) == 1)
-            {
-                
-                printf("Esta palavra não está registrada no repositório, logo, não é possível retirá-la.\n");fclose(arquivo);
-                EXIT_SUCCESS;
-            }
-            
-            *linhas2++;
         }
+
         fclose(arquivo);
+        
+        FILE *arquivo;
+        arquivo = fopen("repo.txt", "w+");
+        
+        char Buffer56[32];
+
+        while(!feof(arquivo))
+        {
+          fgets(Buffer56, 32, temp_file);
+          fputs(Buffer56, arquivo);
+
+        }
+        
     }
+        
+       
 }
 
 void Consult()
@@ -145,7 +110,7 @@ void Consult()
         while(!feof)
         {
             fgets(Buffer99,32,arquivo);
-            fputs();
+            printf("%s\n", Buffer99);
         }
         
     }
