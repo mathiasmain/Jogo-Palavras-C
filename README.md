@@ -40,6 +40,6 @@ Assim, sempre teremos uma pasta padrão repo.txt e a de suporte.
 
 1. Pergunta a palavra a ser eliminada.
 2. Armazena.
-3. Roda um loop que, independente desta palavra existir ou não na pasta, roda um copiando tudo oque houver
+3. Roda um loop que, independente desta palavra existir ou não na pasta, copia tudo oque houver
 no arquivo primário para o secundário.
-4. Copia de volta para a pasta primária com o modo "w+", todas as palavras de volta.
+4. Copia todas as palavras de volta para a pasta primária com o modo "w+".

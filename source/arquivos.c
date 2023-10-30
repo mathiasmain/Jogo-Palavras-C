@@ -63,7 +63,7 @@ void Erased()
         char BufferEr[32];
         char BufferTemp[32];
 
-        printf("Qual palavra deseja inserir?");
+        printf("Qual palavra deseja apagar?");
         fgets(BufferEr, 32, stdin);
         
         while(fgets(BufferTemp, 32, arquivo) != NULL)

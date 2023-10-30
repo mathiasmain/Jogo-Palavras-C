@@ -73,7 +73,7 @@ int main(void)
                 printf("[1] Adicionar palavra\n");
                 printf("[2] Retirar palavra\n");
                 printf("[3] Consultar palavras\n");
-                pritnf("[4] Voltar ao menu\n\n");
+                printf("[4] Voltar ao menu\n\n");
 
                 char buffer2[3];
 
