@@ -14,8 +14,8 @@
 
 // #define NDEBUG
 // #include <assert.h>
-// #define ll long long
 
+// TODO: Mudar funções para suportar formato CSV para ser passado para uma struct.
 
 void Insert()
 {
@@ -49,20 +49,31 @@ void Insert()
 
 void Erased()
 {
-    FILE *arquivo, *temp_file;
+    FILE *arquivo;
     arquivo = fopen("repo.txt", "a");
-    temp_file = fopen("temp.txt", "w+");
-
-    if (arquivo == NULL || temp_file == NULL)
+    
+    if (arquivo == NULL)
     {
         printf("Não foi possível abrir o arquivo!\n");
         EXIT_FAILURE;
     }
     else
     {
+        unsigned int index = 0;
+        unsigned int linhak = 0;
+        
         char BufferEr[32];
         char BufferTemp[32];
 
+        rewind(!feof(arquivo));
+        while(!feof(arquivo))
+        {
+            linhak++;
+        }
+        rewind(!feof(arquivo));
+        char BufferCpy[linhak-1][32];
+        
+        
         printf("Qual palavra deseja apagar?");
         fgets(BufferEr, 32, stdin);
         
@@ -70,22 +81,21 @@ void Erased()
         {
             if (strcmp(BufferEr, BufferTemp) != 0)
             {
-                fputs(BufferTemp,temp_file);
+                strcpy(BufferCpy[index],BufferTemp);
+                index++;
             }
         }
 
         fclose(arquivo);
         
+        index = 0;
+
         FILE *arquivo;
         arquivo = fopen("repo.txt", "w+");
         
-        char Buffer56[32];
-
-        while(!feof(arquivo))
+        for(unsigned int i = 0; i < linhak; i++)
         {
-          fgets(Buffer56, 32, temp_file);
-          fputs(Buffer56, arquivo);
-
+          fputs(BufferCpy[index], arquivo);
         }
         
     }
@@ -107,7 +117,7 @@ void Consult()
     else
     {
         char Buffer99[32];
-        while(!feof)
+        while(!feof(arquivo))
         {
             fgets(Buffer99,32,arquivo);
             printf("%s\n", Buffer99);

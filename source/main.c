@@ -15,6 +15,7 @@
 #include <string.h>
 #include "arquivos.c"
 #include "game.c"
+#include <threads.h>
 
 // #define NDEBUG
 // #include <assert.h>
@@ -70,10 +71,10 @@ int main(void)
 
                 printf("Que ação deseja realizar?\n\n");
 
-                printf("[1] Adicionar palavra\n");
-                printf("[2] Retirar palavra\n");
-                printf("[3] Consultar palavras\n");
-                printf("[4] Voltar ao menu\n\n");
+                printf("\t[1] Adicionar palavra\n");
+                printf("\t[2] Retirar palavra\n");
+                printf("\t[3] Consultar palavras\n");
+                printf("\t[4] Voltar ao menu\n\n");
 
                 char buffer2[3];
 

@@ -13,9 +13,9 @@ Após iniciar o programa, é apresentado um menu, tendo:
     Após a leitura, basta apenas copiar essa string, retirar o tamanho dela, e dependendo do modo de dificuldade, retirar de 10% -> 50% das letras delas.
     Com base nisto, o jogador precisará acertar a palavra toda.
     
-    Mid           - 20% faltando, 20 segundos e chances infinitas.
-    A vida é dura - 30% faltando, 10 segundos, 5 chances.
-    GOW           - 40% faltando, 5 segundos, 2 chances.
+    Mid           - 30% faltando, 20 segundos e 10 chances.
+    A vida é dura - 40% faltando, 10 segundos, 5 chances.
+    GOW           - 50% faltando, 5 segundos, 2 chances.
 
 - Após criar o sistema de pontuação, é só ler o valor guardado **aonde** ??
 
@@ -43,3 +43,14 @@ Assim, sempre teremos uma pasta padrão repo.txt e a de suporte.
 3. Roda um loop que, independente desta palavra existir ou não na pasta, copia tudo oque houver
 no arquivo primário para o secundário.
 4. Copia todas as palavras de volta para a pasta primária com o modo "w+".
+
+
+
+#### Modos de jogo
+
+- Sobrevivência
+Gradualmente irá aumentando de dificuldade, conforme o usuário acerta palavras, buscando palavras cada vez
+maiores.
+Além disto, também há a influência da dificuldade.
+
+- Modo padrão
